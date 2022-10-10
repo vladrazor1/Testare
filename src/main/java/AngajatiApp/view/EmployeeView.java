@@ -8,6 +8,7 @@ public class EmployeeView {
 		System.out.println("\t2. Modifica functia didactica a unui angajat");
 		System.out.println("\t3. Afiseaza salariati");
 		System.out.println("\t0. Exit");
+		System.out.println("\t4. Vezi ce ispravesti");
 	}
 
 }
