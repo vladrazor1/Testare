@@ -14,7 +14,7 @@ public class Employee {
 	private static final int ID = 5;
 	private int id;
 	private String nume;/** The last name of the employee */
-	private String firstName; /** The first name of the employee */
+	private static String firstName; /** The first name of the employee */
 	private String cnp; /** The unique id of the employee */
 	private DidacticFunction function; /** The didactic function of the employee inside the university */
 	private Double salary; /** The salary of the employee */
@@ -49,7 +49,7 @@ public class Employee {
 		this.id = id;
 	}
 
-	public String getFirstName() {
+	public static String getFirstName() {
 		return firstName;
 	}
 	
@@ -167,5 +167,5 @@ public class Employee {
 
 		return employee;
 	}
-	
+
 }
