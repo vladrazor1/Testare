@@ -1,1 +1,12 @@
-C:\Testare\src\main\java\org\example\App.java
+C:\Testare\src\main\java\AngajatiApp\model\AgeCriteria.java
+C:\Testare\src\main\java\AngajatiApp\main\StartApp.java
+C:\Testare\src\main\java\AngajatiApp\repository\EmployeeImpl.java
+C:\Testare\src\main\java\AngajatiApp\model\SalaryCriteria.java
+C:\Testare\src\main\java\AngajatiApp\view\EmployeeView.java
+C:\Testare\src\main\java\AngajatiApp\repository\EmployeeRepositoryInterface.java
+C:\Testare\src\main\java\AngajatiApp\repository\EmployeeMock.java
+C:\Testare\src\main\java\AngajatiApp\validator\EmployeeException.java
+C:\Testare\src\main\java\AngajatiApp\model\Employee.java
+C:\Testare\src\main\java\AngajatiApp\validator\EmployeeValidator.java
+C:\Testare\src\main\java\AngajatiApp\controller\DidacticFunction.java
+C:\Testare\src\main\java\AngajatiApp\controller\EmployeeController.java
