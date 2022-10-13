@@ -5,9 +5,9 @@ import org.junit.After;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 import java.util.ArrayList;
@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeTest {
-       Employee e0,e1,e2,e3,e4,e5,e6;
-    ArrayList<Employee> employeeList = new ArrayList<>();
+     static Employee e0,e1,e2,e3,e4,e5,e6;
+    static ArrayList<Employee> employeeList = new ArrayList<>();
 
-    @Before
-    public void setUp(){
+    @BeforeAll
+    public static void setUp(){
         //Automat inainte de rularea testelor
         e0 = new Employee(); //employee sarac
 
@@ -36,11 +36,11 @@ class EmployeeTest {
         employeeList.add(e4);
         employeeList.add(e5);
         employeeList.add(e6);
-
-        System.out.println(employeeList);
     }
 
     @Test
+    @Order(2)
+    @Timeout(5000)
     public void testSetDateNotNull(){
         for (Employee var:employeeList){
             assertNotNull(var.getFirstName());
@@ -49,19 +49,44 @@ class EmployeeTest {
             assertNotNull(var.getFunction());
             assertNotNull(var.getSalary());
         }
+        System.out.println(employeeList);
     }
 
     @Test
+    @Order(1)
     public void IntentionatPentruFail(){
       try {
-           Assert.assertEquals("Noupe",e1.getCnp() ,"1111111");
+           Assert.assertEquals("Noupe "," 1111111 ", e1.getCnp());
       }catch (Exception e){
           System.out.println("Am presupus gresit ca CNP-ul dau ar fi 1111111");
       }
     }
 
-    @After
-    public void tearDown(){
+    @Disabled
+    @Order(3)
+    @Test
+    public void nimic(){
+            System.out.println("Nu trebuia sa vazi asta!");
+    }
+
+    @ParameterizedTest
+    @ValueSource (strings={"Gigescu","Caprescu","Lenescu"})
+    public void uzParametruIntrare(String nume){
+        for (Employee var:employeeList){
+            Assert.assertFalse("Hopa, vezi ca ai un nume naspa, Imi pare rau de tine", var.getLastName().contains(nume));
+            System.out.println("Incercare cu:" + nume);
+        }
+    }
+
+
+
+
+
+
+
+
+    @AfterAll
+    public static void tearDown(){
         System.out.println("Gata testul!");
     }
 
