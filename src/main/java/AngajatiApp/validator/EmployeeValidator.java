@@ -4,8 +4,6 @@ import AngajatiApp.controller.DidacticFunction;
 import AngajatiApp.model.Employee;
 
 public class EmployeeValidator {
-	
-	public EmployeeValidator(){}
 
 	public boolean isValid(Employee employee) {
 		return isFirstNameValid(employee) 
@@ -27,7 +25,10 @@ public class EmployeeValidator {
 	}
 
 	private boolean isCnpValid(Employee employee) {
-		return employee.getCnp().matches("[a-z0-9]+") && (employee.getCnp().length() == 13);
+		boolean validare = false;
+		int year = Integer.parseInt(employee.getCnp().substring(1,3));
+		if (year > 60 || year <22){validare = true;}
+		return employee.getCnp().matches("[a-z0-9]+") && (employee.getCnp().length() == 13) && validare;
 	}
 
 	private boolean isLastNameValid(Employee employee) {
