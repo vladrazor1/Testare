@@ -29,7 +29,7 @@ public class Employee {
 		this.function  = DidacticFunction.ASISTENT;
 		this.salary    = 0.0d;
 	}
-	
+
 	/**
 	 * Constructor with fields for employee
 	 */
@@ -40,7 +40,8 @@ public class Employee {
 		this.function  = function;
 		this.salary    = salary;
 	}
-	
+
+
 	public int getId() {
 		return id;
 	}
