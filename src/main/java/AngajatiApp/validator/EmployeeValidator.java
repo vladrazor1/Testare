@@ -21,7 +21,8 @@ public class EmployeeValidator {
 		return employee.getFunction().equals(DidacticFunction.ASISTENT)
 				|| employee.getFunction().equals(DidacticFunction.LECTURER) 
 				|| employee.getFunction().equals(DidacticFunction.TEACHER) 
-				|| employee.getFunction().equals(DidacticFunction.CONFERENTIAR);
+				|| employee.getFunction().equals(DidacticFunction.CONFERENTIAR)
+		        || employee.getFunction().equals(DidacticFunction.BISNITAR);
 	}
 
 	private boolean isCnpValid(Employee employee) {

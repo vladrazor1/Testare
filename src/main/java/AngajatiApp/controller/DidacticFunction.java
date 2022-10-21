@@ -1,5 +1,5 @@
 package AngajatiApp.controller;
 
 public enum DidacticFunction {
-	ASISTENT, LECTURER, TEACHER, CONFERENTIAR;
+	ASISTENT, LECTURER, TEACHER, CONFERENTIAR, BISNITAR,;
 }
