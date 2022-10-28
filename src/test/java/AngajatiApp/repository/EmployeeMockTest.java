@@ -28,13 +28,12 @@ public class EmployeeMockTest {
     @Test
     public void addEmployee_TC01() {
 
-        e0 = new Employee("Dorel", "Piscot", "1950909125807", DidacticFunction.ASISTENT, 2500d);
+        e0 = new Employee("Dorel", "Piscot", "1210909125807", DidacticFunction.ASISTENT, 2500d);
 
         int employeeNumber = mock.getEmployeeList().size();
 
-
         try {
-            mock.addEmployee(e0);
+            assertTrue("Adaugare nu s-a efectuat", mock.addEmployee(e0));
             assert(true);
             assertEquals(employeeNumber + 1, mock.getEmployeeList().size());
         }catch (Exception e){
@@ -50,8 +49,9 @@ public class EmployeeMockTest {
 
         int employeeNumber = mock.getEmployeeList().size();
 
+
         try {
-            mock.addEmployee(e1);
+            assertFalse("Adaugarea s-a efectuat!!",mock.addEmployee(e1));
             assertEquals(employeeNumber, mock.getEmployeeList().size()); //Nu trebuie sa ajunga aici
             assert (true);
         } catch (Exception e) {
@@ -61,9 +61,9 @@ public class EmployeeMockTest {
     }
 
 //    @Test
-//    public void addEmployee_TC07() {
-//        DidacticFunction cocalar;
-//        e2 = new Employee("Dorel", "Piscot", "1950909125807",cocalar, 2500d);
+//    public void addEmployee_TC06() {
+//
+//        e2 = new Employee("Dorel", "Piscot", "1950909125807","", 2500d);
 //
 //        int employeeNumber = mock.getEmployeeList().size();
 //
@@ -118,7 +118,7 @@ public class EmployeeMockTest {
         int employeeNumber = mock.getEmployeeList().size();
 
         try {
-            mock.addEmployee(e5);
+            assertFalse("Adaugarea s-a efectuat!!",mock.addEmployee(e5));
             assertEquals(employeeNumber, mock.getEmployeeList().size()); //Nu trebuie sa ajunga aici
             assert(true);
         }catch (Exception e){
@@ -126,6 +126,7 @@ public class EmployeeMockTest {
         }
 
     }
+
 
 //    @Test
 //    public void addEmployee_TC05() {
@@ -154,7 +155,7 @@ public class EmployeeMockTest {
         int employeeNumber = mock.getEmployeeList().size();
 
         try {
-            mock.addEmployee(e7);
+            assertTrue("Adaugare nu s-a efectuat", mock.addEmployee(e7));
             assertEquals(employeeNumber +1, mock.getEmployeeList().size()); //Nu trebuie sa ajunga aici
             assert(true);
         }catch (Exception e){
