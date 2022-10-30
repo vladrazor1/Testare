@@ -12,7 +12,7 @@ public class Employee {
 	private static final int DIDACTIC_FUNCTION_INDEX = 3;
 	private static final int SALARY_INDEX = 4;
 	private static final int ID = 5;
-	private int id;
+	private float id;
 	private String nume;/** The last name of the employee */
 	private String firstName; /** The first name of the employee */
 	private String cnp; /** The unique id of the employee */
@@ -34,6 +34,7 @@ public class Employee {
 	 * Constructor with fields for employee
 	 */
 	public Employee(String firstName, String lastName, String cnp, DidacticFunction function, Double salary) {
+		this.id = Float.valueOf(cnp);
 		this.firstName = firstName;
 		this.nume  = lastName;
 		this.cnp       = cnp;
@@ -42,7 +43,9 @@ public class Employee {
 	}
 
 
-	public int getId() {
+
+
+	public float getId() {
 		return id;
 	}
 
@@ -89,19 +92,20 @@ public class Employee {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		String employee = "";
-		employee += firstName + ";";
-		employee += nume + ";";
-		employee += cnp + ";";
-		employee += function.toString() + ";";
-		employee += salary + ";";
-		employee += id;
-		return employee;
+		return "Employee{" +
+				"id=" + id +
+				", nume='" + nume + '\'' +
+				", firstName='" + firstName + '\'' +
+				", cnp='" + cnp + '\'' +
+				", function=" + function +
+				", salary=" + salary +
+				'}';
 	}
-	
+
 	@Override
 	public boolean equals(Object otherEmployee) {
 		if (otherEmployee == this) {
